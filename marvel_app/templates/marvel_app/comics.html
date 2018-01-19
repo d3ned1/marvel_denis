@@ -1,0 +1,13 @@
+{% extends 'marvel_app/base.html' %}
+{#{% load static %}#}
+
+
+      {% block block_main %}
+
+{% for comicskey in comicsobj %}
+    <p>{{ comicskey.title }}</p>
+    <p><img src="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}"></p>
+{% endfor %}
+
+
+      {% endblock %}

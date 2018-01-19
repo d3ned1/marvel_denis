@@ -1,0 +1,17 @@
+{% extends 'marvel_app/base.html' %}
+
+      {% block block_main %}
+          <p>You searched for:
+
+              {% for num in title %}
+                  <strong>{{ num.title }}</strong>
+{#                  <strong>{{ num.ean }}</strong>#}
+                  </p>
+              {% endfor %}
+
+              {% for num in results %}
+                  <strong>{{ num }}</strong>
+              {% endfor %}
+      {% endblock %}
+
+
