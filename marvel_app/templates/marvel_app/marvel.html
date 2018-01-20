@@ -1,17 +1,80 @@
 {% extends 'marvel_app/base.html' %}
+{% load staticfiles %}
+{% load static %}
 
       {% block block_main %}
-          <p>You searched for:
+<section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Search page</h1>
+          <p class="lead text-muted">
+              Dear {% if user.first_name %}
+              {{ user.first_name }}
+              {% else %}
+              Visitor,
+              {% endif %}please, enter the comic title you are looking for.</p>
+        </div>
 
-              {% for num in title %}
-                  <strong>{{ num.title }}</strong>
-{#                  <strong>{{ num.ean }}</strong>#}
-                  </p>
-              {% endfor %}
+        <form action="" method="get">
+            <input type="text" name='q'>
+            <input type="submit" value="Search">
+        </form>
 
-              {% for num in results %}
-                  <strong>{{ num }}</strong>
-              {% endfor %}
+</section>
+
+
+{% for obj in objs %}
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            <h4 class="panel-title">
+{#                <form action="" method="post">#}
+{#                <button type="button" class="btn btn-success"Save it<input type="submit"></button>#}
+{#                </form>#}
+                <a data-toggle="collapse" href="#{{ obj }}.collapse">{{ obj.title }}</a>
+            </h4>
+            <form action = "" method = "post">{% csrf_token %}
+            <input type="submit" name="{{ obj.external_id }}" value="Add to Gallery" />
+            </form>
+            <h6>Date on sale: {{ obj.date_on_sale }}
+                {% if comicskey.ean %}
+                    , EAN: {{ comicskey.ean }}
+                {% endif %}
+                {% if comicskey.variant_d %}
+                    , Variant description: {{ comicskey.variant_d }}
+            </h6>
+                {% endif %}
+                <p><img src="{{ obj.image_ref }}"></p>
+
+                <div id="{{ obj }}.collapse" class="panel-collapse collapse">
+                    <div class="panel-body">
+                <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                            <a href="{{'/static/marvel_app/'}}{{ obj.image_cover }}" target="_blank">
+                            <img src="{{'/static/marvel_app/'}}{{ obj.image_cover }}" alt="Nature" style="width:100%">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                            <a href="{{'/static/marvel_app/'}}{{ obj.image_cover }}" target="_blank">
+                            <img src="{{'/static/marvel_app/'}}{{ obj.image_cover }}" alt="Nature" style="width:100%">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                            <a href="{{'/static/marvel_app/'}}{{ obj.image_cover }}" target="_blank">
+                            <img src="{{'/static/marvel_app/'}}{{ obj.image_cover }}" alt="Nature" style="width:100%">
+                            </a>
+                            </div>
+                        </div>
+                </div>
+                    <div class="panel-footer">Panel Footer</div>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
       {% endblock %}
-
-
