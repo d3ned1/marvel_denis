@@ -44,22 +44,26 @@
 
                     <div class="col-sm-6">
 {#                        right column#}
-                        <form action="" method="get">{% csrf_token %}
+                        <form action="" method="post">{% csrf_token %}
                             <input type="hidden" name="title" value="{{obj.title}}">
+                            <input type="hidden" name="external_id" value="{{obj.external_id}}">
+                            <input type="hidden" name="date_on_sale" value="{{obj.date_on_sale}}">
+                            <input type="hidden" name="image_ref" value="{{obj.image_ref}}">
                             <input type="submit" class="submit_btn btn" value="Add to collection"/>
                         </form>
 
                         <h5><b>Date on sale:</b> {{ obj.date_on_sale }}
-                            {% if comicskey.ean %}
-                                , EAN: {{ comicskey.ean }}
+                            {% if obj.ean %}
+                                <p><b>EAN:</b> {{ obj.ean }}</p>
                             {% endif %}
-                            {% if comicskey.variant_d %}
-                            , Variant description: {{ comicskey.variant_d }}
-                            {% endif %}
+
+{#                            {% if var.var_id == obj.external_id %}#}
+                            <b>Variants available:</b> {{ obj.variant }}
+{#                            {% endif %}#}
                         </h5>
 
                     <div id="{{ obj }}.collapse" class="panel-collapse collapse">
-                          <div class="panel-body">
+                          <div class="panel-body" align="left">
                           <div class="row">
                               <div class="col-md-4">
                                   <div class="thumbnail">
@@ -75,7 +79,7 @@
                                       </a>
                                   </div>
                               </div>
-                              <div class="col-md-4">
+                              <div class="col-md-4" >
                                   <div class="thumbnail">
                                       <a href="{{obj.image_ref}}" target="_blank">
                                           <img src="{{obj.image_ref}}" alt="Nature" style="width:100%">
@@ -83,14 +87,12 @@
                                   </div>
                               </div>
                           </div>
-                              <h6>Date on sale: {{ obj.date_on_sale }}
-                                  {% if comicskey.ean %}
-                                , EAN: {{ comicskey.ean }}
-                                  {% endif %}
-                                  {% if comicskey.variant_d %}
-                                      , Variant description: {{ comicskey.variant_d }}
-                                  {% endif %}
-                              </h6>
+                              <h5>
+                                  {% if obj.com_descr %}
+                                      <b>Description:</b> <p class="justify">{{ obj.com_descr }}</p>
+                                  {% endif %}</h5>
+                    </div>
+                    </div>
                     </div>
                 </div>
             </div>

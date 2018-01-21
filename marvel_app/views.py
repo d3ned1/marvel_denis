@@ -68,21 +68,32 @@ class Marvel():
 def marvel(request):
     list_to_model = Marvel.query(request)
     if list_to_model is not None:
-        objs = [Comic() for i in range(0, len(list_to_model))]
+        objs = [Comic(Variant) for i in range(0, len(list_to_model))]
         comicsid = 0
         if comicsid < len(list_to_model):
             for obj in objs:
                 obj.external_id = list_to_model[comicsid]['id']
                 obj.title = list_to_model[comicsid]['title']
-                obj.date_on_sale = list_to_model[comicsid]['dates'][0]['date']
-                obj.ean = list_to_model[comicsid]['ean']
+                obj.date_on_sale = list_to_model[comicsid]['dates'][0]['date'][:10]
+                if list_to_model[comicsid]['ean'] is not '':
+                    obj.ean = list_to_model[comicsid]['ean']
+                else:
+                    obj.ean = 'not available'
                 obj.variant_d = list_to_model[comicsid]['variantDescription']
-                obj.variant_d = list_to_model[comicsid]['description']
-                # x.image_cover =
                 obj.image_ref = (list_to_model[comicsid]['thumbnail']['path'] + '/detail.jpg')
-
+                obj.com_descr = list_to_model[comicsid]['description']
                 comicsid += 1
 
+        variantss = [Variant() for i in range(0, len(list_to_model))]
+        comicsid = 0
+        if comicsid < len(list_to_model):
+            for var in variantss:
+                if len(list_to_model[comicsid]['variants']) is not 0:
+                    for var_id in range(0, len(list_to_model[comicsid]['variants'])):
+                        var.variant = list_to_model[comicsid]['variants'][var_id]['name']
+                        var.v_id = list_to_model[comicsid]['id']
+                comicsid = comicsid + 1
+        # objs[0].variants = variantss[0].variant
         # paginator = Paginator(objs, 5)
         # page = request.GET.get('page')
         # try:
@@ -94,15 +105,23 @@ def marvel(request):
         #     # If page is out of range (e.g. 9999), deliver last page of results.
         #     objj = paginator.page(paginator.num_pages)
         # return render_to_response('marvel_app/marvel.html', {"obj": objj})
+        # x = Comic.objects.get(pk=id)
+        # if request.method == 'POST':
+        #     form = QuestionForm(request.POST, instance=question)
+        #     form.save()
 
+        if request.method == 'POST':
+            x = Comic()
+            x.title = request.POST["title"]
+            x.external_id = request.POST['external_id']
+            x.image_ref = request.POST['image_ref']
+            x.date_on_sale = request.POST['date_on_sale']
+            x.save()
         return render(request, 'marvel_app/marvel.html', locals())
     else:
         return render(request, 'marvel_app/marvel.html')
 
 
-def save_comic(request):
-    if request == 'POST' and request.POST['title']:
-        x = Comic()
-        x.image_cover = request.POST["title"]
-        x.save()
-        # x.image_cover = request.POST['image_cover']
+# def save_comic(request):
+#
+#         # x.image_cover = request.POST['image_cover']

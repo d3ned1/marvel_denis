@@ -5,6 +5,7 @@
       {% block block_main %}
 
 {% for comicskey in comicsobj %}
+    {% if not comicskey.hidden %}
     <div class="panel-group">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -20,29 +21,29 @@
                 {% endif %}
                 </h6>
             </h4>
-                <p><img src="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}"></p>
+                <p><img src="{{ comicskey.image_ref }}"></p>
 
                 <div id="{{ comicskey }}.collapse" class="panel-collapse collapse">
                     <div class="panel-body">
                 <div class="row">
                         <div class="col-md-4">
                             <div class="thumbnail">
-                            <a href="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}" target="_blank">
-                            <img src="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}" alt="Nature" style="width:100%">
+                            <a href="{{ comicskey.image_ref }}" target="_blank">
+                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">
                             </a>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail">
-                            <a href="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}" target="_blank">
-                            <img src="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}" alt="Nature" style="width:100%">
+                            <a href="{{ comicskey.image_ref }}}" target="_blank">
+                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">
                             </a>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="thumbnail">
-                            <a href="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}" target="_blank">
-                            <img src="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}" alt="Nature" style="width:100%">
+                            <a href="{{ comicskey.image_ref }}" target="_blank">
+                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">
                             </a>
                             </div>
                         </div>
@@ -54,7 +55,7 @@
 
         </div>
     </div>
-
+    {% endif %}
 {% endfor %}
 
 
