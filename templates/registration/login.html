@@ -1,20 +1,27 @@
 {% extends "marvel_app/base.html" %}
 {% load static %}
+{% block title %}{{ 'Login Page' }}{% endblock %}
 
 {% block block_main%}
 
-  {% if form.errors %}
+
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Please, login to continue</h1>
+            <p>
+              <form action='' method='post'>{% csrf_token %}
+                  <label for="username">Your Username:</label>
+                  <input type="text" name="username" value="" id="username">
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" value="" id="password">
+                  <input type="submit" class="submit_btn btn label-success" value="login" />
+                  <input type="hidden" name="next" value="{{ next|escape }}" />
+              </form>
+            </p>
+          <p class="lead text-muted">
+        </div>
+    </section>
+{% if form.errors %}
     <p class="error">Сожалеем, вы неправильно ввели логин или пароль</p>
   {% endif %}
-
-  <form action='' method='post'>{% csrf_token %}
-    <label for="username">Логин:</label>
-    <input type="text" name="username" value="" id="username">
-    <label for="password">Пароль:</label>
-    <input type="password" name="password" value="" id="password">
-
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next|escape }}" />
-  </form>
-
 {% endblock %}

@@ -57,8 +57,10 @@ ROOT_URLCONF = 'marvel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        # 'TEMPLATE_LOADERS':'django.template.loaders.filesystem.Loader'
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 'TEMPLATE_DIRS': [[os.path.join(BASE_DIR, 'marvel_app/templates')]]
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

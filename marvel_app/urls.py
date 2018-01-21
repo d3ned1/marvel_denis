@@ -4,7 +4,7 @@ from marvel_app import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.marvel, name="marvel"),
     path('marvel/', views.marvel, name="marvel"),
     path('master/', views.master, name="master"),
     path('comics/', views.comics, name="comics"),
