@@ -5,16 +5,20 @@
 {% block block_main%}
 
 
-    <section class="jumbotron text-center">
+    <section class="text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Please, login to continue</h1>
+          <h2>Please, login to continue</h2>
             <p>
               <form action='' method='post'>{% csrf_token %}
+            <div class = "container left-1">
                   <label for="username">Your Username:</label>
                   <input type="text" name="username" value="" id="username">
+            </div>
+            <div class = "container right-1">
                   <label for="password">Password:</label>
                   <input type="password" name="password" value="" id="password">
-                  <input type="submit" class="submit_btn btn label-success" value="login" />
+                  <input type="submit" class="submit_btn btn" value="Let Me In" />
+                </div>
                   <input type="hidden" name="next" value="{{ next|escape }}" />
               </form>
             </p>
