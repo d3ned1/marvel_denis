@@ -1,70 +1,151 @@
 {% extends 'marvel_app/base.html' %}
 {% load staticfiles %}
+{% load static %}
+
+
 {% block title %}{{ 'Comics Page' }}{% endblock %}
 
       {% block block_main %}
 
 {% for comicskey in comicsobj %}
     {% if not comicskey.hidden %}
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
 
-            <h4 class="panel-title">
-            <a data-toggle="collapse" href="#{{ comicskey }}.collapse">{{ comicskey.title }}</a>
-                <h6>Date on sale: {{ comicskey.date_on_sale }}
-                {% if comicskey.ean %}
-                    , EAN: {{ comicskey.ean }}
-                {% endif %}
-                {% if comicskey.variant_d %}
-                    , Variant description: {{ comicskey.variant_d }}
-                {% endif %}
-                </h6>
-            </h4>
-                <p><img src="{{ comicskey.image_ref }}"></p>
+{#container for two columns#}
+    <div class="container-fluid">
+        <div class="row">
 
-                <div id="{{ comicskey }}.collapse" class="panel-collapse collapse">
-                    <div class="panel-body">
+            <div class="col-sm-12">
+                <h4><b><a data-toggle="collapse" href="#{{ comicskey }}.collapse" style="color: #393939">{{ comicskey.title }}</a></b></h4>
                 <div class="row">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                            <a href="{{ comicskey.image_ref }}" target="_blank">
-                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">
+                    <div class="col-sm-6">
+{#                        left column#}
+                        <div class="thumbnail">
+                            <a href="{{comicskey.image_ref}}" target="_blank">
+                          <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">
                             </a>
-                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                            <a href="{{ comicskey.image_ref }}}" target="_blank">
-                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">
-                            </a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                            <a href="{{ comicskey.image_ref }}" target="_blank">
-                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">
-                            </a>
-                            </div>
-                        </div>
+                    </div>
+
+                    <div class="col-sm-6 right1">
+{#                        right column#}
+
+{#                        <form action="" method="post">{% csrf_token %}#}
+{#                            <input type="hidden" name="title" value="{{comicskey.title}}">#}
+{#                            <input type="hidden" name="external_id" value="{{comicskey.external_id}}">#}
+{#                            <input type="hidden" name="date_on_sale" value="{{comicskey.date_on_sale}}">#}
+{#                            <input type="hidden" name="image_ref" value="{{comicskey.image_ref}}">#}
+{#                            <input type="submit" class="submit_btn btn" value="Add to Bag"/>#}
+{#                        </form>#}
+
+                        <h5><b>Date on sale:</b> {{ comicskey.date_on_sale }}
+                            {% if comicskey.ean %}
+                                <p><b>EAN:</b> {{ comicskey.ean }}</p>
+                                {% else %}
+                                <p><b>EAN:</b> not available</p>
+                            {% endif %}
+
+{#                            {% if var.var_id == obj.external_id %}#}
+                            <p><b>Comic variants:</b></p> {{ comic_variant.variant_name}}
+{#                            {% endif %}#}
+                        </h5>
+
+                    <div id="{{ comicskey }}.collapse" class="panel-collapse collapse">
+                          <div class="panel-body" align="left">
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <div class="thumbnail">
+                                      <a href="{{comicskey.image_ref}}" target="_blank">
+                                          <img src="{{comicskey.image_ref}}" alt="Nature" style="width:100%">
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="col-md-4">
+                                  <div class="thumbnail">
+                                      <a href="{{comicskey.image_ref}}" target="_blank">
+                                          <img src="{{comicskey.image_ref}}" alt="Nature" style="width:100%">
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="col-md-4" >
+                                  <div class="thumbnail">
+                                      <a href="{{comicskey.image_ref}}" target="_blank">
+                                          <img src="{{comicskey.image_ref}}" alt="Nature" style="width:100%">
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                              <h5>
+                                  {% if comicskey.com_descr %}
+                                      <b>Description:</b> <p class="justify">{{ comicskey.com_descr }}</p>
+                                  {% endif %}</h5>
+
+                                            {%  for image in image_list %}
+                                                <a href="{{images.image.1}}" target="_blank">
+                                            <img src="{{image}}" alt="Nature" style="width:100%">
+                                            {% endfor %}
+                                        </a>
+                    </div>
+                    </div>
+                    </div>
                 </div>
-                    <div class="panel-footer">Panel Footer</div>
-
             </div>
-
-
         </div>
     </div>
+
     {% endif %}
 {% endfor %}
 
 
-{#    <p>{{ comicskey.title }} (Date on sale: {{ comicskey.date_on_sale }},#}
-{#        {% if ean %}#}
-{#            EAN:{{ comicskey.ean }}#}
-{#        {% endif %})</p>#}
-{#    <p><img src="{{'/static/marvel_app/'}}{{ comicskey.image_cover }}"></p>#}
-{##}
-
-
       {% endblock %}
+{##}
+{#    <div class="panel-group">#}
+{#        <div class="panel panel-default">#}
+{#            <div class="panel-heading">#}
+{##}
+{#            <h4 class="panel-title">#}
+{#            <a data-toggle="collapse" href="#{{ comicskey }}.collapse">{{ comicskey.title }}</a>#}
+{#                <h6>Date on sale: {{ comicskey.date_on_sale }}#}
+{#                {% if comicskey.ean %}#}
+{#                    , EAN: {{ comicskey.ean }}#}
+{#                {% endif %}#}
+{#                {% if comicskey.variant_d %}#}
+{#                    , Variant description: {{ comicskey.variant_d }}#}
+{#                {% endif %}#}
+{#                </h6>#}
+{#            </h4>#}
+{#                <p><img src="{{ comicskey.image_ref }}"></p>#}
+{##}
+{#                <div id="{{ comicskey }}.collapse" class="panel-collapse collapse">#}
+{#                    <div class="panel-body">#}
+{#                <div class="row">#}
+{#                        <div class="col-md-4">#}
+{#                            <div class="thumbnail">#}
+{#                            <a href="{{ comicskey.image_ref }}" target="_blank">#}
+{#                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">#}
+{#                            </a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-md-4">#}
+{#                            <div class="thumbnail">#}
+{#                            <a href="{{ comicskey.image_ref }}}" target="_blank">#}
+{#                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">#}
+{#                            </a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-md-4">#}
+{#                            <div class="thumbnail">#}
+{#                            <a href="{{ comicskey.image_ref }}" target="_blank">#}
+{#                            <img src="{{ comicskey.image_ref }}" alt="Nature" style="width:100%">#}
+{#                            </a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                </div>#}
+{#                    <div class="panel-footer">Panel Footer</div>#}
+{##}
+{#            </div>#}
+{##}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#        </div>#}
+{#    </div>#}

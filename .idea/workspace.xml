@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d94b129-e5fc-4c57-ab1b-194712d74bd4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0010_auto_20180121_1533.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0011_auto_20180121_1533.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0012_auto_20180121_1534.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0013_auto_20180121_1535.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0014_auto_20180121_1642.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0015_variant_v_id.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0016_comic_hidden.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0017_auto_20180121_2016.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/static/marvel_app/media/favicon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0018_comicimage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0019_auto_20180122_1640.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0020_comic_variant_variant_name.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0021_auto_20180122_1651.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/migrations/0022_auto_20180122_1732.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/static/js.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/marvel_app/templates/temp/comics_.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel_.html" afterPath="$PROJECT_DIR$/marvel_app/templates/temp/marvel_.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel/settings.py" afterPath="$PROJECT_DIR$/marvel/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/admin.py" afterPath="$PROJECT_DIR$/marvel_app/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/models.py" afterPath="$PROJECT_DIR$/marvel_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/static/base.css" afterPath="$PROJECT_DIR$/marvel_app/static/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/templates/marvel_app/about.html" afterPath="$PROJECT_DIR$/marvel_app/templates/marvel_app/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/templates/marvel_app/base.html" afterPath="$PROJECT_DIR$/marvel_app/templates/marvel_app/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/templates/marvel_app/comics.html" afterPath="$PROJECT_DIR$/marvel_app/templates/marvel_app/comics.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel.html" afterPath="$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marvel_app/views.py" afterPath="$PROJECT_DIR$/marvel_app/views.py" />
@@ -54,12 +61,10 @@
       <file leaf-file-name="marvel.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="76" column="57" lean-forward="false" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
+            <state relative-caret-position="103">
+              <caret line="66" column="63" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="63" />
               <folding>
-                <element signature="e#153#870#0#HTML" expanded="false" />
                 <element signature="n#if#0;n#!!top" expanded="false" />
-                <element signature="e#1096#1118#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,9 +73,14 @@
       <file leaf-file-name="comics.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/comics.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="185">
+              <caret line="47" column="87" lean-forward="false" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
+              <folding>
+                <element signature="e#4256#4274#0#HTML" expanded="true" />
+                <marker date="1516641608861" expanded="false" signature="5775:5785" ph="..." />
+                <marker date="1516641608861" expanded="false" signature="6181:6191" ph="..." />
+                <marker date="1516641608861" expanded="false" signature="6586:6596" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,21 +88,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/marvel_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="83" column="58" lean-forward="false" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+            <state relative-caret-position="288">
+              <caret line="106" column="19" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
               <folding>
-                <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decorators.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -100,11 +100,35 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/marvel_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+            <state relative-caret-position="-483">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
-                <element signature="e#28#56#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#1152#1190#0" expanded="false" />
+                <element signature="e#1440#1476#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/marvel_app/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/marvel/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,10 +139,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Setup Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -130,6 +154,8 @@
       <find>ean</find>
       <find>cover</find>
       <find>title</find>
+      <find>obj</find>
+      <find>&lt;QuerySet [&lt;ComicImage: Avengers (2016) #678&gt;, &lt;ComicImage: Avengers (2016) #678&gt;]&gt;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,19 +174,20 @@
         <option value="$PROJECT_DIR$/marvel_app/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/marvel_app/urls.py" />
         <option value="$PROJECT_DIR$/templates/admin/base_html.html" />
-        <option value="$PROJECT_DIR$/marvel/settings.py" />
         <option value="$PROJECT_DIR$/marvel/urls.py" />
         <option value="$PROJECT_DIR$/templates/admin/base_site.html" />
         <option value="$PROJECT_DIR$/templates/registration/logout.html" />
-        <option value="$PROJECT_DIR$/marvel_app/templates/marvel_app/about.html" />
-        <option value="$PROJECT_DIR$/marvel_app/admin.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/marvel_app/templates/marvel_app/base.html" />
+        <option value="$PROJECT_DIR$/marvel_app/templates/marvel_app/about.html" />
         <option value="$PROJECT_DIR$/marvel_app/static/base.css" />
-        <option value="$PROJECT_DIR$/marvel_app/views.py" />
+        <option value="$PROJECT_DIR$/marvel_app/templates/marvel_app/base.html" />
+        <option value="$PROJECT_DIR$/marvel_app/static/js.js" />
         <option value="$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel.html" />
-        <option value="$PROJECT_DIR$/marvel_app/models.py" />
+        <option value="$PROJECT_DIR$/marvel/settings.py" />
         <option value="$PROJECT_DIR$/marvel_app/templates/marvel_app/comics.html" />
+        <option value="$PROJECT_DIR$/marvel_app/admin.py" />
+        <option value="$PROJECT_DIR$/marvel_app/views.py" />
+        <option value="$PROJECT_DIR$/marvel_app/models.py" />
       </list>
     </option>
   </component>
@@ -212,6 +239,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,6 +262,21 @@
               <item name="marvel" type="462c0819:PsiDirectoryNode" />
               <item name="marvel_app" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="marvel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="marvel" type="462c0819:PsiDirectoryNode" />
+              <item name="marvel_app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="marvel_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="marvel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="marvel" type="462c0819:PsiDirectoryNode" />
+              <item name="marvel_app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="marvel_app" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="marvel" type="b2602c69:ProjectViewProjectNode" />
@@ -274,7 +317,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,19 +327,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/marvel" />
+      <recent name="$PROJECT_DIR$/marvel_app" />
+      <recent name="$PROJECT_DIR$/marvel_app/static" />
+      <recent name="$PROJECT_DIR$/marvel_app/templates/temp" />
+      <recent name="$PROJECT_DIR$/marvel_app/templates/marvel_app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/marvel_app/templates/temp" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/marvel_app/templates/marvel_app" />
       <recent name="$PROJECT_DIR$/marvel_app" />
       <recent name="$PROJECT_DIR$/marvel_app/templates/marvel_app/registration" />
-      <recent name="$PROJECT_DIR$/marvel_app/templates" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/marvel_app/templates/marvel_app" />
-      <recent name="$PROJECT_DIR$/templates/admin" />
-      <recent name="$PROJECT_DIR$/templates/registration" />
-      <recent name="$PROJECT_DIR$/marvel_app/static/marvel_app" />
-      <recent name="$PROJECT_DIR$/marvel_app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -392,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516548712009</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="21_01_2018_last">
+      <created>1516566059689</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1516566059689</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -405,22 +454,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="75" y="6" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.50269026" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="348" y="435" width="777" height="282" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="348" y="435" width="777" height="282" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.46532437" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.80089486" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974634" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980783" sideWeight="0.48322147" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@marvel" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980783" sideWeight="0.5167785" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980783" sideWeight="0.47427294" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@marvel" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882884" sideWeight="0.49730977" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.19910514" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4009009" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -429,7 +479,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -443,10 +492,28 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="last" />
     <MESSAGE value="21_01_2018" />
-    <option name="LAST_COMMIT_MESSAGE" value="21_01_2018" />
+    <MESSAGE value="21_01_2018_last" />
+    <option name="LAST_COMMIT_MESSAGE" value="21_01_2018_last" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/marvel_app/views.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/marvel_app/views.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/marvel_app/views.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -457,52 +524,17 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="168" />
+      <option name="time" value="178" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/marvel_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marvel/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="52" lean-forward="false" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/master.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
           <folding>
-            <element signature="e#153#870#0#HTML" expanded="false" />
             <element signature="n#if#0;n#!!top" expanded="false" />
-            <element signature="e#1096#1118#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -528,9 +560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -585,9 +615,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -619,13 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/core/handlers/exception.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -663,14 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/marvel_app/static/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -698,27 +711,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/base_html.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marvel/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/base_html.html" />
     <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,15 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,16 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/base_site.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -782,25 +760,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/static/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel_.html">
+    <entry file="file://$PROJECT_DIR$/marvel_app/templates/temp/marvel_.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
@@ -808,50 +768,147 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/marvel_app/templates/temp/comics_.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marvel_app/static/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marvel_app/static/js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="95" column="18" lean-forward="false" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/core/handlers/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/contrib/auth/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
+        <state relative-caret-position="124">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/marvel_app/views.py">
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/db/models/fields/related.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="83" column="58" lean-forward="false" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="140">
+          <caret line="783" column="27" lean-forward="false" selection-start-line="783" selection-start-column="27" selection-end-line="783" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/marvel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="76" column="57" lean-forward="false" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
+        <state relative-caret-position="103">
+          <caret line="66" column="63" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="63" />
           <folding>
-            <element signature="e#153#870#0#HTML" expanded="false" />
             <element signature="n#if#0;n#!!top" expanded="false" />
-            <element signature="e#1096#1118#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/marvel_app/templates/marvel_app/comics.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="185">
+          <caret line="47" column="87" lean-forward="false" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
+          <folding>
+            <element signature="e#4256#4274#0#HTML" expanded="true" />
+            <marker date="1516641608861" expanded="false" signature="5775:5785" ph="..." />
+            <marker date="1516641608861" expanded="false" signature="6181:6191" ph="..." />
+            <marker date="1516641608861" expanded="false" signature="6586:6596" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="514" column="8" lean-forward="false" selection-start-line="514" selection-start-column="8" selection-end-line="514" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marvel/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marvel_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marvel_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="106" column="19" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/marvel_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+        <state relative-caret-position="-483">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#28#56#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#1152#1190#0" expanded="false" />
+            <element signature="e#1440#1476#0" expanded="false" />
           </folding>
         </state>
       </provider>

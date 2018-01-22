@@ -128,5 +128,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_ROOT = '/home/denis/PycharmProjects/marvel/marvel_app/static/marvel_app/'
-MEDIA_URL = '/marvel_app/static/marvel_app/'
+MEDIA_URL = '/static/marvel_app/'
 

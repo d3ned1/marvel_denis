@@ -1,20 +1,10 @@
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response
 from django.shortcuts import render
-from django.contrib import auth
-from django.conf import settings
-from django.shortcuts import redirect
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
-from django.template.context_processors import csrf
-import requests
 import hashlib, datetime, requests, json
 from marvel.settings import pri_key, pub_key
-from .models import Comic, Variant  # , searchedComic
+from .models import Comic, Comic_variant, ComicImage
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 limit = 20
 
@@ -31,6 +21,7 @@ def master(request):
 @login_required(login_url='/login/')
 def comics(request):
     comicsobj = Comic.objects.all()
+
     return render(request, 'marvel_app/comics.html', locals())
 
 
@@ -68,60 +59,70 @@ class Marvel():
 def marvel(request):
     list_to_model = Marvel.query(request)
     if list_to_model is not None:
-        objs = [Comic(Variant) for i in range(0, len(list_to_model))]
+        objs = [Comic() for i in range(0, len(list_to_model))]
         comicsid = 0
+        # variants =[]
         if comicsid < len(list_to_model):
             for obj in objs:
                 obj.external_id = list_to_model[comicsid]['id']
                 obj.title = list_to_model[comicsid]['title']
                 obj.date_on_sale = list_to_model[comicsid]['dates'][0]['date'][:10]
-                if list_to_model[comicsid]['ean'] is not '':
-                    obj.ean = list_to_model[comicsid]['ean']
-                else:
-                    obj.ean = 'not available'
+                obj.ean = list_to_model[comicsid]['ean']
                 obj.variant_d = list_to_model[comicsid]['variantDescription']
                 obj.image_ref = (list_to_model[comicsid]['thumbnail']['path'] + '/detail.jpg')
                 obj.com_descr = list_to_model[comicsid]['description']
+                # obj.stories = list_to_model[comicsid]['stories']['items'][1]
+                # if len(list_to_model[comicsid]['variants']) is not 0:
+                #     var = Variant()
+                #     var = get_variants(list_to_model, comicsid)
+                if len(list_to_model[comicsid]['images']) > 0:
+                    img = ComicImage()
+                    img = get_images(list_to_model, comicsid)
                 comicsid += 1
 
-        variantss = [Variant() for i in range(0, len(list_to_model))]
-        comicsid = 0
-        if comicsid < len(list_to_model):
-            for var in variantss:
-                if len(list_to_model[comicsid]['variants']) is not 0:
-                    for var_id in range(0, len(list_to_model[comicsid]['variants'])):
-                        var.variant = list_to_model[comicsid]['variants'][var_id]['name']
-                        var.v_id = list_to_model[comicsid]['id']
-                comicsid = comicsid + 1
-        # objs[0].variants = variantss[0].variant
-        # paginator = Paginator(objs, 5)
-        # page = request.GET.get('page')
-        # try:
-        #     objj = paginator.page(page)
-        # except PageNotAnInteger:
-        #     # If page is not an integer, deliver first page.
-        #     objj = paginator.page(1)
-        # except EmptyPage:
-        #     # If page is out of range (e.g. 9999), deliver last page of results.
-        #     objj = paginator.page(paginator.num_pages)
-        # return render_to_response('marvel_app/marvel.html', {"obj": objj})
-        # x = Comic.objects.get(pk=id)
-        # if request.method == 'POST':
-        #     form = QuestionForm(request.POST, instance=question)
-        #     form.save()
-
         if request.method == 'POST':
-            x = Comic()
-            x.title = request.POST["title"]
-            x.external_id = request.POST['external_id']
-            x.image_ref = request.POST['image_ref']
-            x.date_on_sale = request.POST['date_on_sale']
-            x.save()
+            save_comic(request)
+
         return render(request, 'marvel_app/marvel.html', locals())
     else:
         return render(request, 'marvel_app/marvel.html')
 
 
-# def save_comic(request):
-#
-#         # x.image_cover = request.POST['image_cover']
+def save_comic(request):
+    x = Comic()
+    x.title = request.POST["title"]
+    x.external_id = request.POST['external_id']
+    x.image_ref = request.POST['image_ref']
+    x.date_on_sale = request.POST['date_on_sale']
+    x.save()
+
+
+def get_variants(list, comicsid):
+    unsorted_list = list
+    comics_id = comicsid
+    variants = Comic_variant()
+    for var_id in range(0, len(unsorted_list[comics_id]['variants'])):
+        variants.variant = unsorted_list[comics_id]['variants'][var_id]['name']
+        variants.v_id = unsorted_list[comics_id]['id']
+    return variants
+
+
+def get_images(list, comicsid):
+    unsorted_list = list
+    comics_id = comicsid
+    images = ComicImage()
+    for var_id in range(0, len(unsorted_list[comics_id]['images'])):
+        images.image = (unsorted_list[comics_id]['images'][var_id]['path'] + '.jpg')
+        images.v_id = unsorted_list[comics_id]['id']
+    return images
+
+
+    # variantss = [Variant() for i in range(0, len(list_to_model))]
+    #         comicsid = 0
+    #         if comicsid < len(list_to_model):
+    #             for var in variantss:
+    #                 if len(list_to_model[comicsid]['variants']) is not 0:
+    #                     for var_id in range(0, len(list_to_model[comicsid]['variants'])):
+    #                         var.variant = list_to_model[comicsid]['variants'][var_id]['name']
+    #                         var.v_id = list_to_model[comicsid]['id']
+    #                 comicsid = comicsid + 1

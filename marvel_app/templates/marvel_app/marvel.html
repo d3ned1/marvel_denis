@@ -52,13 +52,14 @@
                             <input type="submit" class="submit_btn btn" value="Add to collection"/>
                         </form>
 
-                        <h5><b>Date on sale:</b> {{ obj.date_on_sale }}
+                        <h5><p><b>Date on sale:</b> {{ obj.date_on_sale }}</p>
                             {% if obj.ean %}
                                 <p><b>EAN:</b> {{ obj.ean }}</p>
+                                {% else %}<p><b>EAN:</b> not available</p>
                             {% endif %}
 
 {#                            {% if var.var_id == obj.external_id %}#}
-                            <b>Variants available:</b> {{ obj.variant }}
+{#                            <b>Comic variants:</b> {{ obj.variant }}#}
 {#                            {% endif %}#}
                         </h5>
 
@@ -87,9 +88,14 @@
                                   </div>
                               </div>
                           </div>
-                              <h5>
+                              <h5><b>Comic title:</b> {{ obj.title}}
+                                  <p><b>Date on sale:</b> {{ obj.date_on_sale }}</p>
+
+{#                            {% if var.var_id == obj.external_id %}#}
+{#                            <b>Comic variants:</b> {{ obj.variant }}#}
+{#                            {% endif %}#}
                                   {% if obj.com_descr %}
-                                      <b>Description:</b> <p class="justify">{{ obj.com_descr }}</p>
+                                      <b>Short description:</b><p class="justify">{{ obj.com_descr }}</p>
                                   {% endif %}</h5>
                     </div>
                     </div>
