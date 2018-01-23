@@ -6,16 +6,15 @@ class Comic(models.Model):
     class Meta:
         verbose_name_plural = 'Comics'
 
-    external_id = models.IntegerField(blank=True)  # external id of the comic
-    title = models.CharField(max_length=100)  # title of the comic
-    date_on_sale = models.CharField(max_length=10, blank=True)  # sale start date of the comic
-    ean = models.TextField(blank=True)  # comic EAN number
-    variant_d = models.TextField(blank=True)  # current comic variant description
-    # current comic available variants
-    image_ref = models.URLField(blank=True)  # link to the cover image
-    image_cover = models.ImageField(blank=True, upload_to='media/')  # storage field and place for the image cover
-    com_descr = models.TextField(blank=True)  # current comic description
-    hidden = models.BooleanField(default=False)  # object is hidden or not
+    external_id = models.IntegerField(blank=True, verbose_name='External ID')  # external id of the comic
+    title = models.CharField(max_length=100, verbose_name='Title')  # title of the comic
+    date_on_sale = models.CharField(max_length=10, blank=True, verbose_name='Date of sales start')  # sale start date of the comic
+    ean = models.CharField(blank=True, max_length=100, verbose_name='EAN')  # comic EAN number
+    variant_d = models.CharField(blank=True, max_length=100, verbose_name='Current variant description')  # current comic variant description
+    image_ref = models.URLField(blank=True, verbose_name='Cover source link')  # link to the cover image
+    image_cover = models.ImageField(blank=True, upload_to='media/', verbose_name='Cover image field')  # storage field and place for the image cover
+    com_descr = models.TextField(blank=True, verbose_name='Comic short description')  # current comic short description
+    hidden = models.BooleanField(default=False, verbose_name='Should comic be hidden or not')  # object is hidden or not
     user = models.ForeignKey(  # User model
         User,
         models.SET_NULL,
@@ -41,7 +40,7 @@ class ComicImage(models.Model):
         verbose_name_plural = 'Comic images'
 
     comic = models.ForeignKey(Comic, related_name='images', on_delete=False)
-    image = models.ImageField(upload_to='media/')
+    image = models.ImageField()
 
     def __str__(self):
         return self.comic.title

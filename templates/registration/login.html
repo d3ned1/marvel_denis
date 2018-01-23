@@ -22,10 +22,10 @@
                   <input type="hidden" name="next" value="{{ next|escape }}" />
               </form>
             </p>
+            {% if form.errors %}
+    <p class="error">We are sorry, but your input is incorrect. Please, try again</p>
+  {% endif %}
           <p class="lead text-muted">
         </div>
     </section>
-{% if form.errors %}
-    <p class="error">Сожалеем, вы неправильно ввели логин или пароль</p>
-  {% endif %}
 {% endblock %}

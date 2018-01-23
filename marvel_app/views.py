@@ -14,14 +14,9 @@ def email_check(user):
 
 
 @login_required(login_url='/login/')
-def master(request):
-    return render(request, 'marvel_app/comics.html', locals())
-
-
-@login_required(login_url='/login/')
 def comics(request):
     comicsobj = Comic.objects.all()
-
+    variant = Comic_variant.objects.all()
     return render(request, 'marvel_app/comics.html', locals())
 
 
@@ -32,7 +27,7 @@ def about(request):
 class Marvel():
     baseURI = "http://gateway.marvel.com/v1/public"
 
-    def query(request):
+    def query(request): # make proper link, send GET request (search btn), return json
         if 'q' in request.GET and request.GET['q']:
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d%H:%M:%S")
             hash_input = timestamp + pri_key + pub_key
@@ -70,11 +65,12 @@ def marvel(request):
                 obj.ean = list_to_model[comicsid]['ean']
                 obj.variant_d = list_to_model[comicsid]['variantDescription']
                 obj.image_ref = (list_to_model[comicsid]['thumbnail']['path'] + '/detail.jpg')
-                obj.com_descr = list_to_model[comicsid]['description']
+                if list_to_model[comicsid]['description'] is not None:
+                    obj.com_descr = list_to_model[comicsid]['description']
                 # obj.stories = list_to_model[comicsid]['stories']['items'][1]
-                # if len(list_to_model[comicsid]['variants']) is not 0:
-                #     var = Variant()
-                #     var = get_variants(list_to_model, comicsid)
+                if len(list_to_model[comicsid]['variants']) is not 0:
+                    var = Comic_variant()
+                    var = get_variants(list_to_model, comicsid)
                 if len(list_to_model[comicsid]['images']) > 0:
                     img = ComicImage()
                     img = get_images(list_to_model, comicsid)
@@ -88,12 +84,16 @@ def marvel(request):
         return render(request, 'marvel_app/marvel.html')
 
 
-def save_comic(request):
+def save_comic(request):  # save comic using POST request
     x = Comic()
     x.title = request.POST["title"]
     x.external_id = request.POST['external_id']
     x.image_ref = request.POST['image_ref']
     x.date_on_sale = request.POST['date_on_sale']
+    x.ean = request.POST['en']
+    x.com_descr = request.POST['com_descr']
+    x.variant_d = request.POST['variant_d']
+
     x.save()
 
 
@@ -102,7 +102,7 @@ def get_variants(list, comicsid):
     comics_id = comicsid
     variants = Comic_variant()
     for var_id in range(0, len(unsorted_list[comics_id]['variants'])):
-        variants.variant = unsorted_list[comics_id]['variants'][var_id]['name']
+        variants.variant_name = unsorted_list[comics_id]['variants'][var_id]['name']
         variants.v_id = unsorted_list[comics_id]['id']
     return variants
 

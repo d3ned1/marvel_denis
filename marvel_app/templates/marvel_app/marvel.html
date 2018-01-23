@@ -8,10 +8,9 @@
         <div class="container">
           <h2>Search page</h2>
           <p class="lead text-muted">
-              Dear {% if user.first_name %}
-              {{ user.first_name }}
-              {% else %}
-              Visitor,
+              Dear {% if user.first_name %}{{ user.first_name }}
+              {% elif user.username %}{{ user.username}},
+              {% else %}Visitor,
               {% endif %}please, enter the title of a comic.</p>
         </div>
   <form action="">
@@ -45,10 +44,14 @@
                     <div class="col-sm-6">
 {#                        right column#}
                         <form action="" method="post">{% csrf_token %}
+
                             <input type="hidden" name="title" value="{{obj.title}}">
                             <input type="hidden" name="external_id" value="{{obj.external_id}}">
                             <input type="hidden" name="date_on_sale" value="{{obj.date_on_sale}}">
                             <input type="hidden" name="image_ref" value="{{obj.image_ref}}">
+                            <input type="hidden" name="com_descr" value="{{obj.com_descr}}">
+                            <input type="hidden" name="variant_d" value="{{obj.variant_d}}">
+                            <input type="hidden" name="en" value="{{obj.ean}}">
                             <input type="submit" class="submit_btn btn" value="Add to collection"/>
                         </form>
 
@@ -58,9 +61,9 @@
                                 {% else %}<p><b>EAN:</b> not available</p>
                             {% endif %}
 
-{#                            {% if var.var_id == obj.external_id %}#}
-{#                            <b>Comic variants:</b> {{ obj.variant }}#}
-{#                            {% endif %}#}
+                           {% if var.var_id == obj.external_id %}
+                            <b>Comic variants:</b> {{ obj.variant }}
+                           {% endif %}
                         </h5>
 
                     <div id="{{ obj }}.collapse" class="panel-collapse collapse">

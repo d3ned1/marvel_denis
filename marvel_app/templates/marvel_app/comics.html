@@ -44,9 +44,11 @@
                                 <p><b>EAN:</b> not available</p>
                             {% endif %}
 
-{#                            {% if var.var_id == obj.external_id %}#}
-                            <p><b>Comic variants:</b></p> {{ comic_variant.variant_name}}
-{#                            {% endif %}#}
+                            {% if variant.variant_name %}
+{#                                {% for var in variant %}#}
+                            <p><b>Comic variants:</b></p> {{ variant.variant_name}}
+{#                                {% endfor %}#}
+                            {% endif %}
                         </h5>
 
                     <div id="{{ comicskey }}.collapse" class="panel-collapse collapse">
@@ -74,16 +76,16 @@
                                   </div>
                               </div>
                           </div>
-                              <h5>
-                                  {% if comicskey.com_descr %}
-                                      <b>Description:</b> <p class="justify">{{ comicskey.com_descr }}</p>
-                                  {% endif %}</h5>
+                              <h5><b>Comic title:</b> {{ comicskey.title}}
+                                  <p><b>Date on sale:</b> {{ comicskey.date_on_sale }}</p>
 
-{#                                            {%  for image in image_list %}#}
-{#                                                <a href="{{'/static/marvel_app/'}}{{ comicsobj.image_cover }}" target="_blank">#}
-{#                                                    <img src="{{'/static/marvel_app/'}}{{ comicsobj.image_cover }}" alt="Nature" style="width:100%">#}
-{#                                                </a>#}
-{#                                            {% endfor %}#}
+                            {% if comicskey.variant %}
+                            <b>Comic variants:</b> {{ comicskey.variant }}
+                            {% endif %}
+                                  {% if comicskey.com_descr %}
+                                      <b>Short description:</b><p class="justify">{{ comicskey.com_descr }}</p>
+                                  {% endif %}
+                              </h5>
                     </div>
                     </div>
                     </div>
