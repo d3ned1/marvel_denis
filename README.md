@@ -16,7 +16,7 @@ commonuser iclgdc123 - user
 
 1.1. Press on the comic name to see additional info
 
-1.2. 'Add' button to send POST request
+1.2. 'Add' button to send POST request and add current comic to /comics page
 
 2. Use /master to get to Master Page (administration)
 
