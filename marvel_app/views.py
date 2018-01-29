@@ -1,10 +1,15 @@
-from django.shortcuts import render
-import hashlib, datetime, requests, json
-from marvel.settings import pri_key, pub_key
-from .models import Comic, Comic_variant, ComicImage
+import datetime
+import hashlib
+import requests
+import time
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
+from django.shortcuts import render
+
+from marvel.settings import pri_key, pub_key
+from .models import Comic, Comic_variant, ComicImage
 
 limit = 20
 
@@ -29,7 +34,7 @@ class Marvel():
 
     def query(request): # make proper link, send GET request (search btn), return json
         if 'q' in request.GET and request.GET['q']:
-            timestamp = datetime.datetime.now().strftime("%Y-%m-%d%H:%M:%S")
+            timestamp = str(time.time())
             hash_input = timestamp + pri_key + pub_key
             hashed_string = hashlib.md5(hash_input.encode('utf-8')).hexdigest()
             url_params = {
@@ -40,7 +45,7 @@ class Marvel():
             title = request.GET['q']
             if limit is not None:
                 url_params['limit'] = limit
-                URI = "/comics" + "?title=" + title
+                URI = "/comics" + "?titleStartsWith=" + title
                 Marvel.fullURI = Marvel.baseURI + URI
                 resp = requests.get(Marvel.fullURI, params=url_params)
                 print(resp.url)
